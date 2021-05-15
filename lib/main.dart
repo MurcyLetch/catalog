@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       ),
       //initialRoute: "/home",//we can use anything which we want to show as the home page
       routes: {
-       "/": (context)=>LoginPage() ,//HomePage(),
+       "/": (context)=>HomePage(),
        MyRoutes.homeroute:(context)=>HomePage(),
        MyRoutes.loginroute:(context)=>LoginPage(),
       },
