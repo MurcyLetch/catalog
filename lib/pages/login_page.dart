@@ -10,6 +10,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String name="";
+  // ignore: non_constant_identifier_names
   bool Changebutton=false;
   final _formkey=GlobalKey<FormState>();
   movetohome(BuildContext context) async {
