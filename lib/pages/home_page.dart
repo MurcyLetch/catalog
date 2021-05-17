@@ -81,9 +81,11 @@ class _HomePageState extends State<HomePage> {
         //   ),
         // ),
         // drawer: Mydrawer(),
+        backgroundColor: context.canvasColor,
       floatingActionButton: FloatingActionButton( //designing for cart button in home page
         onPressed: ()=>Navigator.pushNamed(context, MyRoutes.cartroute),
-        child:Icon(CupertinoIcons.cart),
+        backgroundColor: context.theme.buttonColor,
+        child:Icon(CupertinoIcons.cart,color: Colors.white,),
       ),
       body: SafeArea(
         child: Container(

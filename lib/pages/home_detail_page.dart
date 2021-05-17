@@ -16,7 +16,7 @@ class Homedetailpage extends StatelessWidget {
           Colors.transparent
           ),
       ),
-      backgroundColor: MyTheme.creamcolor,
+      backgroundColor:context.canvasColor,
       bottomNavigationBar:ButtonBar( //comes from left to right
                 alignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -24,13 +24,13 @@ class Homedetailpage extends StatelessWidget {
                   ElevatedButton(
                     onPressed: (){},
                      style:ButtonStyle(
-                       backgroundColor: MaterialStateProperty.all(MyTheme.darkbluishcolor),
+                       backgroundColor: MaterialStateProperty.all(context.theme.buttonColor),
                        shape:MaterialStateProperty.all(StadiumBorder()),
                      ) ,
                      child: "Add to Cart".text.xl.make(),
                   ).wh(130, 50)
                 ],
-              ).p16().backgroundColor(Colors.purple[50]),
+              ).p16().backgroundColor(context.cardColor),
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -46,11 +46,11 @@ class Homedetailpage extends StatelessWidget {
                   arcType: VxArcType.CONVEY,
                   edge:VxEdge.TOP,
                   child: Container(
-                    color: Colors.purple[50],
+                    color: context.cardColor,
                     width:context.screenWidth,
                     child: Column(
                       children: [
-                        catalog.name.text.xl4.bold.make(), //name
+                        catalog.name.text.xl4.color(context.accentColor).bold.make(), //name
                         catalog.desc.text.textStyle(context.captionStyle).xl.make(),//desc
                         "dfcdsahfgavfghjfd fjhdafd fadf ufydaufyuayf adufydaufyudayfudayf dauyfudayfuday fuodas fudaytudayfudayfudaf"
                         .text.textStyle(context.captionStyle)
