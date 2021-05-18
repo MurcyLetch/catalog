@@ -38,12 +38,15 @@ class _LoginPageState extends State<LoginPage> {
           key: _formkey,
           child: Column(
             children: [
+              SizedBox(
+                height: 20.0,
+              ),
               Image.asset(
-                "assets/images/login_img.png",
+                "assets/images/logincat.png",
                 fit: BoxFit.cover,
               ),
               SizedBox(
-                height: 20.0,
+                height: 30.0,
               ),
               Text(
                 "welcome to MurcyDom, $name",

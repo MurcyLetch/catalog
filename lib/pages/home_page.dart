@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:catalog/core/store.dart';
+import 'package:catalog/models/cartmodel.dart';
 import 'package:catalog/models/catalog.dart';
 import 'package:catalog/utils/routes.dart';
 import 'package:catalog/widgets/drawer.dart';
@@ -38,6 +40,7 @@ class _HomePageState extends State<HomePage> {
     }
   @override
   Widget build(BuildContext context) {
+    final _cart=(VxState.store as Mystore).cart;
     return Scaffold(
 
         // appBar: AppBar(
@@ -82,10 +85,13 @@ class _HomePageState extends State<HomePage> {
         // ),
         // drawer: Mydrawer(),
         backgroundColor: context.canvasColor,
-      floatingActionButton: FloatingActionButton( //designing for cart button in home page
-        onPressed: ()=>Navigator.pushNamed(context, MyRoutes.cartroute),
-        backgroundColor: context.theme.buttonColor,
-        child:Icon(CupertinoIcons.cart,color: Colors.white,),
+      floatingActionButton: VxBuilder(
+        mutations: {Addmutation,Removemutation},
+        builder:(context,_)=> FloatingActionButton( //designing for cart button in home page
+          onPressed: ()=>Navigator.pushNamed(context, MyRoutes.cartroute),
+          backgroundColor: context.theme.buttonColor,
+          child:Icon(CupertinoIcons.cart,color: Colors.white,),
+        ).badge(color:Vx.red300,size: 20,count: _cart.items.length,textStyle: TextStyle(color:Colors.black,fontWeight: FontWeight.bold)),
       ),
       body: SafeArea(
         child: Container(
